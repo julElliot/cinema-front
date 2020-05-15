@@ -1,0 +1,96 @@
+$film-tab-button-color : #3f51b5;
+$session-background-color:  #f0f2f6;
+
+
+.film-tab {
+  display: flex;
+
+  width: 100%;
+
+  justify-content: center;
+
+  @media only screen and (max-width: 515px) {
+      margin: 10px;
+  }
+
+  &__form {
+      display: flex;
+      width: 100%;
+      max-width: 500px;
+
+      font: 100 1em "Roboto", sans-serif;
+
+      flex-flow: column nowrap;
+  }
+
+  &__form-section {
+      display: block;
+
+      margin: 10px 0;
+
+      font: 400 1.3em "Roboto", sans-serif;
+  }
+
+  &__form-field {
+      margin: 10px 0;
+  }
+
+  &__form-label {
+    color: #3f51b5;
+    font-weight: 700;
+  }
+
+  &__button {
+    border: none;
+    //	margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 10px;
+      background: $film-tab-button-color;
+      font-size: 1.3rem;
+      color: $session-background-color;
+      vertical-align: middle;
+      margin-top: 15px;
+    
+      &:hover {
+        color: $session-background-color;
+      }
+  }
+
+  &__button-create {
+    margin-bottom: 10px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+  
+  .link-disabled {
+    color: currentColor;
+    opacity: 0.5;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .film-info__container-delete {
+    position: absolute;
+    top: -3px;
+    left: -10px;
+
+    &:active {
+        background-color: rgb(233, 80, 80);
+    }
+  }
+
+  .film-info__container-update {
+    position: absolute;
+    top: -3px;
+    left: -50px;
+
+    &:active {
+        background-color: $film-tab-button-color 
+    }
+  }
+}

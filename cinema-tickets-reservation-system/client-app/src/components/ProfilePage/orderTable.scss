@@ -1,0 +1,140 @@
+$order-table_background-color: #ffffff;
+$order-table_header-text-color: #ffffff;
+$order-table_header-background-color: #343a40;
+$order-table_row-background-color: #f5f5f5;
+$order-table_row-even-background-color: #ffffff;
+$order-table_row-hover-background-color: #f5f5f5;
+$order-table_text-color: #808080;
+$order-table_text-hover-color: #555555;
+$order-table_border-color: #808080;
+$order-table_row-border-color: #343a40;
+$order-table_without-background-color: #f9ebdf;
+
+.order__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.order-table {
+  border-collapse: collapse;
+  background: $order-table_background-color;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 10px 15px 32px -17px rgba(0,0,0,0.78);
+}
+
+ .order__table-row{
+  text-transform: capitalize;
+  background-color: $order-table_row-background-color;
+
+  td {
+    font-size: 0.75;
+    border-top: 1px solid $order-table_border-color;
+    line-height: 1.2;
+    font-weight: unset;
+    
+  }
+
+  &:nth-child(even) {
+    background-color: $order-table_row-even-background-color;
+  }
+ } 
+
+.order-table__cell-filmName {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.order-not-found{
+  padding-top: 5%;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+  .order-table {
+    display: block;
+    box-shadow: none;
+    background: $order-table_without-background-color;
+  }
+
+  .order-table > *, .order-table tr, .order-table td, .order-table th {
+    display: block;
+  }
+
+  .order__table-head {
+    display: none;
+  }
+
+  .order__table-row {
+    height: auto;
+    background-color: $order-table_row-background-color;
+    border: 1px solid $order-table_row-border-color;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    box-shadow: 10px 15px 32px -17px rgba(0,0,0,0.78);
+
+    &:first-child {
+      margin-top: 5px;
+    }
+    
+    td {
+      padding-left: 60%;
+      position: relative;
+      border: none;
+      text-align: left;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        font-size: 0.75rem;
+        color: $order-table_text-hover-color;
+        line-height: 1.2;
+        font-weight: unset;
+        position: absolute;
+        width: 50%;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+
+      &:nth-child(1):before {
+        content: "Film name";
+      }
+
+      &:nth-child(2):before {
+        content: "City";
+      }
+
+      &:nth-child(3):before {
+        content: "Cinema";
+      }
+
+      &:nth-child(4):before {
+        content: "Date";
+      }
+
+      &:nth-child(5):before {
+        content: "Time";
+      }
+
+      &:nth-child(6):before {
+        content: "Count of tickets";
+      }
+
+      &:nth-child(7):before {
+        content: "Price";
+      }
+    }
+  }
+}

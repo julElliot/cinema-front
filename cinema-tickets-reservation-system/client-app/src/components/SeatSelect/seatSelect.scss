@@ -1,0 +1,253 @@
+$seat-select-background-color:  #dee2e6;
+$seat-select-title-color:  #343a40;
+$seat-select-seat-border-color:  #000000;
+$seat-select-info-box-border-color:  #777777;
+$seat-select-default-seat: #007bff80;
+$seat-select-vip-seat: #e98145;
+$seat-select-default-seat-chosen: #e94584;
+$seat-select-vip-seat-chosen: #e9e645;
+$seat-select-booked-seat: #adadad;
+$seat-select-output-price-background-color: #dee2e6;
+
+
+.sites-select__button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px;
+  margin-top: 10px;
+}
+
+.choose-seat__container {
+
+}
+
+.choose-seat__session-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.seats-scheme__container {
+  padding: 20px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.scheme__container {
+  background-color: $seat-select-background-color;
+  overflow: auto;
+
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: #c1c6cc;	
+    background-image: -webkit-linear-gradient(45deg,
+                                              rgba(255, 255, 255, .2) 25%,
+                        transparent 25%,
+                        transparent 50%,
+                        rgba(255, 255, 255, .2) 50%,
+                        rgba(255, 255, 255, .2) 75%,
+                        transparent 75%,
+                        transparent)
+  }
+}
+
+.row{
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.seat-default, .seat-vip, .seat-vip-chosen, .seat-default-chosen, .seat-booked{
+  width: 30px;
+  height: 30px;
+  border: solid $seat-select-seat-border-color;
+  margin: 5px;
+  display: inline-block;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.seat-default {
+  background-color: $seat-select-default-seat;
+}
+
+.seat-default-chosen{
+  background-color:  $seat-select-default-seat-chosen;
+}
+
+.seat-vip-chosen{
+  background-color:  $seat-select-vip-seat-chosen;
+}
+
+.seat-vip{
+  background-color:  $seat-select-vip-seat;
+}
+
+.seat-booked{
+  background-color: $seat-select-booked-seat;
+}
+
+.seat-info-list__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.seat-info__box, .extra-service__box{
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid $seat-select-info-box-border-color;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.seat-types-info__panel{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.seat-type-info__block{
+  padding: 10px;
+  width: 20%;
+}
+
+.link-disabled {
+  color: currentColor;
+  opacity: 0.5;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.extra-services__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.extra-service__item {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: center;
+}
+
+.output-price__container {
+ /*  display: flex;
+  justify-content: flex-start; */
+}
+
+.output-price__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  } 
+}
+
+.row__number {
+ // margin: auto 10px auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 30px;
+ 
+  & span {
+    font-size: 1rem;
+    font-weight: 900;
+  }
+}
+
+.scheme__row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.row__seats {
+  flex-grow: 2;
+}
+
+.extra-item__name {
+  font-size: 1.5rem;
+}
+
+.confirm-order__header{
+  font-size: 1.5rem;
+  color: $seat-select-title-color;
+}
+
+.seat-select__container{
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.output-price__container {
+  margin-left: auto;
+}
+
+.output-price__wrapper {
+  background-color: $seat-select-output-price-background-color;
+  position: relative;
+  padding: 15px 20px;
+  h5 {
+      font-size: 1rem;
+      margin-bottom: 0;
+  }
+  .output-price__list {
+      margin-top: 5px;
+      li {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+          text-decoration: none;
+          span {
+              font-size: 0.75rem;
+          }
+      }
+  }
+}
+
+.order-info__film-name {
+  font-size: 0.9rem;
+  min-width: 200px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.order-info__row{
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 991px) {	
+  .order-info__film-name {
+    min-width: 150px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}

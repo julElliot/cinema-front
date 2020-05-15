@@ -1,0 +1,96 @@
+.button {
+    display: flex;
+
+    width: 100%;
+    padding: 15px 0 15px 0;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+
+    font: 600 1em/0.5em "Roboto", sans-serif;
+
+    align-items: center;
+    justify-content: center;
+
+    &_primary {
+        transition: 0.25s;
+
+        color: white;
+        border: 2px solid rgb(255, 90, 95);
+        background-color: rgb(255, 90, 95);
+
+        &:active {
+            transition: 0.25s;
+
+            border: 2px solid rgb(214, 70, 75);
+            background-color: rgb(214, 70, 75);
+        }
+    }
+
+    &_secondary {
+        transition: 0.25s;
+
+        color: white;
+        border: 2px solid rgb(0, 120, 131);
+        background-color: rgb(0, 120, 131);
+
+        &:active {
+            transition: 0.25s;
+
+            border: 2px solid rgb(1, 122, 133);
+            background-color: rgb(1, 98, 107);
+        }
+    }
+
+    &_white {
+        transition: 0.25s;
+
+        color: rgb(72, 72, 72);
+        border: 2px solid rgb(43, 40, 40);
+        background-color: white;
+        &:active {
+            transition: 0.25s;
+
+            background-color: rgb(221, 219, 219);
+        }
+    }
+
+    &_back {
+        color: #007883;
+        border: none;
+        background-color: white;
+
+        justify-content: start;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &_purple {
+        color: white;
+        background-color: #914669;
+
+        &:active {
+            transition: 0.25s;
+
+            background-color: #68344c;
+        }
+    }
+
+    &__text {
+        line-height: 1.25em;
+    }
+
+    &__icon {
+        display: block;
+
+        height: 20px;
+        margin: 0 5px;
+
+        color: white;
+    }
+}

@@ -1,0 +1,19 @@
+.countdown__container{
+  margin: 10px auto 0;
+  padding-bottom: 10px;
+}
+
+.countdown__column{
+  display: inline-block;
+}
+
+.countdown__column__element{
+  display: inline-block;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+
+  & strong {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,261 @@
+$session-background-color:  #f0f2f6;
+$session-title-color:  #f0f2f6;
+$session-time-color:  #4c4c4c;
+$session-button-color : #4a89dc;
+
+
+.film-page__info {
+  padding-top: 5%;
+}
+
+.film-page__film-info {
+  padding-right: 5%;
+}
+
+.film-page__button {
+  border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  padding: 1% 3%;
+  width: 10%;
+	background: $session-button-color;
+	font-size: 1.3rem;
+	color: $session-background-color;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  &:hover {
+		color: $session-background-color;
+	}
+}
+
+.session__container {
+	width: 100%;
+	background: $session-background-color;
+}
+
+.session__title_bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+	width: 100%;
+  height: 68px;
+	padding-left: 2%;
+	background-color: #4867c0;
+	background-image: linear-gradient(to right, #4867c0, #329fec);
+	background: #4867c0;
+	background: linear-gradient(to right, #4867c0, #329fec);
+}
+
+.calendar_icon {
+	width: 27px;
+	height: 25px;
+}
+
+.session__icon img {
+	max-width: 100%;
+}
+
+.session__title {
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: $session-title-color;
+	margin-left: 4%;
+}
+
+.session__items {
+	width: 100%;
+	padding: 5% 0;
+}
+
+.session__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+	width: 100%;
+  //padding-left: 4%;
+  
+  &:not(:last-child){
+    margin-bottom: 20px;
+  }
+}
+
+.button-back {
+  margin-top: 20px;
+}
+
+.session__item_time
+{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  //margin-left: 4%;
+  min-width: 33%;
+  
+  & span:first-child
+  {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $session-time-color;
+    line-height: 0.75;
+  }
+
+  & span:last-child
+  {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $session-time-color;
+    margin-top: 10px;
+  }
+}
+
+.session__item_text
+{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  //margin-left: 15%;
+  text-transform: capitalize;
+  min-width: 33%;
+  
+  & span:first-child
+  {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $session-time-color;
+    line-height: 0.75;
+  }
+
+  & span:last-child
+  {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $session-time-color;
+    margin-top: 10px;
+  }
+}
+
+.session__item__button {
+  border: none;
+//	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 10px;
+	background: $session-button-color;
+	font-size: 1.3rem;
+	color: $session-background-color;
+	vertical-align: middle;
+
+	&:hover {
+		color: $session-background-color;
+	}
+}
+
+
+@media (max-width: 991px){
+  .session__item__button {
+    visibility: hidden;
+   // padding: 0;
+    font-size: 0%;
+    line-height: 0;
+    width: inherit;
+
+    &::after {
+      content:'Ok'; 
+      visibility: visible;
+      display: block;
+      position: absolute;
+      border: none;
+      margin: auto;
+      padding: 3px 10px;
+      background: $session-button-color;
+      font-size: 1.3rem;
+      color: $session-background-color;
+      line-height: initial;
+    }
+
+    .button-back {
+      margin-top: 0;
+    }
+  }
+
+  .session__item_time
+  {
+    padding-left: 3%;
+  
+    & span:first-child
+    {
+      font-size: 1.2rem;
+    }
+  
+    & span:last-child
+    {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .session__item_text
+  {
+    
+    & span:first-child
+    {
+      font-size: 1.2rem;
+    }
+  
+    & span:last-child
+    {
+      font-size: 0.9rem;
+    }
+  }
+
+}
+
+
+
+@media screen and (max-width: 767px) {	
+  .film-page__button {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }	
+
+  .film-page__film-info {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .session__item_time{
+    min-width: 22%;
+    padding-left: 3%;
+  
+    & span:first-child
+    {
+      font-size: 1.5rem;
+    }
+  
+    & span:last-child
+    {
+      font-size: 1rem;
+    }
+  }
+
+  .session__item__button {
+      width: 15%;
+  }
+  
+  .session__item_text
+  {
+    & span:first-child
+    {
+      font-size: 1.5rem;
+    }
+  
+    & span:last-child
+    {
+      font-size: 1rem;
+    }
+  }
+}
+

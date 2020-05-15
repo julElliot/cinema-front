@@ -1,0 +1,137 @@
+$profile-page_background-color: #ffffff;
+$profile-page_border-color: #f0f4f7;
+$profile-page_name-title-color: #5a7391;
+$profile-page_username-title-color: #5b9bd1;
+$profile-page_link-background-color: #93a3b5;
+$profile-page_link-hover-background-color: #fafcfd;
+$profile-page_link-hover-color: #5b9bd1;
+$profile-page_link-active-background-color: #f6f9fb;
+$profile-page_content-background-color: #f9ebdf;
+
+.profile-page__container {
+  margin: 20px 0;
+}
+
+.profile-page__sidebar {
+  padding: 20px 0 10px 0;
+  background: $profile-page_background-color;
+  box-shadow: 10px 15px 32px -17px rgba(0,0,0,0.78);
+}
+
+.profile-page__usertitle {
+  text-align: center;
+  margin-top: 20px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.profile-page__usertitle-name{
+  color: $profile-page_name-title-color;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.profile-page__usertitle-username {
+  text-transform: uppercase;
+  color: $profile-page_username-title-color;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+    
+.profile-page__menu {
+  margin-top: 30px;
+}
+
+.profile-page__nav {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    border-bottom: 1px solid $profile-page_border-color;
+
+    &:last-child {
+      border-bottom: none;
+    } 
+
+    &.active {
+      border-bottom: none;
+    
+      .link {
+        color: $profile-page_link-hover-color;
+        background-color: $profile-page_link-active-background-color;
+        border-left: 2px solid $profile-page_link-hover-color;
+        margin-left: -2px;
+      }
+    }
+  }
+
+  .link {
+    color: $profile-page_link-background-color;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 10px;
+
+    i {
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: $profile-page_link-hover-background-color;
+      color: $profile-page_link-hover-color;
+    }
+  }
+}
+
+.profile-page__content {
+  padding: 0 20px;
+  background: $profile-page_content-background-color;
+  min-height: 460px;
+}
+
+.accountSettings__container {
+  background-color: $profile-page_background-color;
+}
+
+.accountSettings__content {
+  padding: 4%;
+}
+
+@media screen and (max-width: 992px) {
+  .profile-page__nav {
+    .link {
+      font-size: 0.75rem;
+    }
+  }
+
+  .profile-page__usertitle {
+    margin-top: 0;
+  }
+
+  .profile-page__usertitle-username {
+    font-size: 0.6rem;
+  }
+
+  .profile-page__menu {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .profile-page__nav {
+    .link {
+      font-size: 1rem;
+    }
+  }
+  .profile-page__content {
+    padding: 20px 0;
+  }
+  
+  .profile-page__sidebar {
+    margin-right: 20px;
+  }
+}

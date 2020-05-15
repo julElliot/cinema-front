@@ -1,0 +1,9 @@
+.footer {
+  flex: 0 0 auto;
+
+  &__content {
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+}

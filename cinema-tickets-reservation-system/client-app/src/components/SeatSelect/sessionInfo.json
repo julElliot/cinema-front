@@ -1,0 +1,13 @@
+{
+  "SEAT_TYPE": {
+    "vip": 10,
+    "default": 5
+  },
+  "EXTRA": {
+    "popcorn": 1,
+    "cola": 1,
+    "juce": 2,
+    "marshmallow": 2,
+    "coffee": 2
+  }
+}

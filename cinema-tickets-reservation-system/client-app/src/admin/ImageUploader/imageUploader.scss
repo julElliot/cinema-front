@@ -1,0 +1,72 @@
+$error-output: #ec6415;
+$focused: #3f51b5;
+$form-input: #cccccc;
+$text-form: #484848;
+
+.uploader {
+  cursor: pointer;
+
+  color: rgb(105, 102, 102);
+  border: 1px dashed gray;
+  border-radius: 5px;
+
+  &_invalid {
+    border: 2px dashed $error-output;
+  }
+
+  &__active-zone {
+    padding: 7% 5%;
+
+    transition: 0.5s;
+    text-align: center;
+
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
+
+    &_invalid {
+      color: $error-output;
+    }
+  }
+
+  &__aside {
+    display: flex;
+
+    padding: 2% 3% 2% 3%;
+
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  &__aside-container {
+    position: relative;
+
+    padding: 5px;
+  }
+
+  &__aside-container-delete {
+    position: absolute;
+    top: -3px;
+    left: -10px;
+
+    &:active {
+      background-color: $error-output;
+    }
+  }
+
+  &__aside-container-update {
+    position: absolute;
+    top: -3px;
+    left: 35px;
+
+    &:active {
+      background-color: $focused;
+    }
+  }
+
+  &__aside-container-image {
+    width: 100px;
+
+    border-radius: 5px;
+  }
+}

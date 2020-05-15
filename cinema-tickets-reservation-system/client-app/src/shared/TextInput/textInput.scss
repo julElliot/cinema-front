@@ -1,0 +1,48 @@
+$error-output: #ec6415;
+$focused: #3f51b5;
+$form-input: #cccccc;
+$text-form: #484848;
+
+.text-input {
+  display: flex;
+  border: 1px solid $form-input;
+  border-radius: 4px;
+  flex-flow: row nowrap;
+  margin-left: 10px;
+
+  &_focused {
+    border-color: $focused;
+  }
+
+  &_invalid {
+    border-color: $error-output;
+  }
+
+  &__input {
+    display: flex;
+    width: 100%;
+    padding: 15px 10px;
+    background: transparent;
+    color: $text-form;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    font: 100 1em/0.5em 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    //overflow: scroll;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    color: $form-input;
+    align-self: center;
+  }
+
+  &_error,
+  &_warning {
+    padding-bottom: 15px;
+    color: $error-output;
+    font: 500 0.85em 'Roboto', sans-serif;
+  }
+}

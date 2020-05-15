@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "cinema-ticket-resevation",
+    "cinema-reservation": "cinema-ticket-resevation"
+  }
+}

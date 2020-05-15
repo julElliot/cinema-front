@@ -1,0 +1,43 @@
+$film-info-background-color: #343a40;
+$film-info-text-color: #ffffff;
+
+
+.film-info__container{
+  height: 300px;
+  background-color: $film-info-background-color;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.film-info__caption {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  max-height: 100%;
+  background-color: $film-info-background-color;
+  color: $film-info-text-color;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+/*   opacity: 0.5; */
+}
+
+.date-timer-picker_margin {
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding: 18.5px 14px;
+}
+
+@media screen and (max-width: 767px) {	
+  .film-info__container{
+
+
+    background-size: cover;
+    background-position-y: 67%;
+  }
+}
