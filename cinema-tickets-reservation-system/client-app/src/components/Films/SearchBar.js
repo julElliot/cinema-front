@@ -7,7 +7,7 @@ import DatePicker from './DatePicker';
 import searchFilmActionHelpers from '../../helper/SearchFilmActionHelpers';
 import AutosuggestInput from '../../shared/AutosuggestInput';
 
-const styles = theme => ({
+const styles = (theme) => ({
   container: {
     display: 'flex',
     justifyContent: 'center',
@@ -40,24 +40,22 @@ class SearchBar extends Component {
 
   componentDidMount() {
     this.setState({
-      cinemaList: this.formatDataForAutosuggest(this.props.cinemaList),
+      cinemaList: this.props.cinemaList,
       filmList: this.formatDataForAutosuggest(this.props.filmList),
     });
   }
 
   formatDataForAutosuggest = (dataList) => {
     const autosuggestList = [];
-    dataList
-      && dataList.forEach((item) => {
+    dataList &&
+      dataList.forEach((item) => {
         autosuggestList.push({ name: item });
       });
     return autosuggestList;
   };
 
   renderInputComponent(inputProps) {
-    const {
-      classes, label, inputRef, ...other
-    } = inputProps;
+    const { classes, label, inputRef, ...other } = inputProps;
     return (
       <TextField
         label={label}
@@ -82,10 +80,9 @@ class SearchBar extends Component {
       onCinemaChange,
       setSessionDate,
     } = this.props;
+    console.log('cinema compt', cinema);
     return (
       <form className={classes.container} autoComplete="off">
-        
-
         <TextField
           id="outlined-city"
           select
@@ -93,30 +90,52 @@ class SearchBar extends Component {
           className={classes.textField}
           type="search"
           value={selectedCity || ''}
-          onChange={e => onCityChange(e.target.value)}
+          onChange={(e) => onCityChange(e.target.value)}
           margin="normal"
           variant="outlined"
           SelectProps={{
             MenuProps: {
               className: classes.menu,
             },
-          }}
-        >
-          {this.props.cities
-            && this.props.cities.map(option => (
+          }}>
+          {this.props.cities &&
+            this.props.cities.map((option) => (
               <MenuItem key={option} value={option}>
                 {searchFilmActionHelpers.capitalizeFirstLatter(option)}
               </MenuItem>
             ))}
         </TextField>
 
-        <AutosuggestInput
+        <TextField
+          id="outlined-city"
+          select
+          label="Cinema"
+          className={classes.textField}
+          type="search"
+          value={cinema || ''}
+          onChange={(e) => onCinemaChange(e.target.value)}
+          margin="normal"
+          variant="outlined"
+          SelectProps={{
+            MenuProps: {
+              className: classes.menu,
+            },
+          }}>
+          {this.state.cinemaList.length &&
+            this.state.cinemaList.map((option) => (
+              <MenuItem key={option} value={option}>
+                {searchFilmActionHelpers.capitalizeFirstLatter(option)}
+              </MenuItem>
+            ))}
+        </TextField>
+
+        {/*  <AutosuggestInput
           onChange={onCinemaChange}
           renderInputComponent={this.renderInputComponent}
           label="Cinema"
           data={this.state.cinemaList}
           value={cinema}
-        />
+        /> */}
 
         <DatePicker setSessionDate={setSessionDate} sessionDate={sessionDate} />
       </form>

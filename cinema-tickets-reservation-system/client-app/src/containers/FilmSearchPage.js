@@ -32,6 +32,7 @@ class FilmSearchPage extends Component {
   };
 
   setCurrentCinema = (cinema) => {
+    console.log('cinema', cinema);
     this.props.setCurrentCinema(cinema);
   };
 
@@ -40,9 +41,7 @@ class FilmSearchPage extends Component {
   };
 
   render() {
-    const {
-      filtredFilms, selectedCity, filmName, cinema, sessionDate, filmList, cinemaList, cityList,
-    } = this.props;
+    const { filtredFilms, selectedCity, filmName, cinema, sessionDate, filmList, cinemaList, cityList } = this.props;
     return (
       <section className="page-content">
         <div className="container">
@@ -61,27 +60,20 @@ class FilmSearchPage extends Component {
             filmList={filmList}
             cinemaList={cinemaList}
           />
-          {!filtredFilms
-            ? (
-              <div className="loadingBlock">
-                <Loader
-                  type="Puff"
-                  color="#ffc107c9"
-                  height="100"
-                  width="100"
-                  className="loader"
-                />
-              </div>
-            )
-            : <FilmList filmList={filtredFilms} />
-          }
+          {!filtredFilms ? (
+            <div className="loadingBlock">
+              <Loader type="Puff" color="#ffc107c9" height="100" width="100" className="loader" />
+            </div>
+          ) : (
+            <FilmList filmList={filtredFilms} />
+          )}
         </div>
       </section>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   films: state.search.films,
   filtredFilms: getFiltredFilms(state.search),
   selectedCity: state.search.filters.selectedCity,
@@ -94,15 +86,14 @@ const mapStateToProps = state => ({
   cityList: state.search.cityList,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchFilms: () => dispatch(fetchFilms()),
-  setCurrentFilmName: filmName => dispatch(setCurrentFilmName(filmName)),
-  setCurrentCity: city => dispatch(setCurrentCity(city)),
-  setCurrentCinema: cinema => dispatch(setCurrentCinema(cinema)),
-  setSessionDate: date => dispatch(setSessionDate(date)),
-  setCountOfSeats: count => dispatch(setCountOfSeats(count)),
+  setCurrentFilmName: (filmName) => dispatch(setCurrentFilmName(filmName)),
+  setCurrentCity: (city) => dispatch(setCurrentCity(city)),
+  setCurrentCinema: (cinema) => dispatch(setCurrentCinema(cinema)),
+  setSessionDate: (date) => dispatch(setSessionDate(date)),
+  setCountOfSeats: (count) => dispatch(setCountOfSeats(count)),
 });
-
 
 export default connect(
   mapStateToProps,
