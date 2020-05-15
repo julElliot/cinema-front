@@ -4,7 +4,7 @@ import { searchTypes } from '../actions/types';
 const initialState = {
   filters: {
     selectedCity: 'minsk',
-    filmName: undefined,
+    filmName: '',
     cinema: 'dom kino',
     sessionDate: moment(),
     countOfSeats: 1,

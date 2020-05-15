@@ -80,7 +80,7 @@ class SearchBar extends Component {
       onCinemaChange,
       setSessionDate,
     } = this.props;
-    console.log('cinema compt', cinema);
+    console.log('cinema compt', this.state.cinemaList);
     return (
       <form className={classes.container} autoComplete="off">
         <TextField
@@ -121,7 +121,7 @@ class SearchBar extends Component {
               className: classes.menu,
             },
           }}>
-          {this.state.cinemaList.length &&
+          {this.state.cinemaList &&
             this.state.cinemaList.map((option) => (
               <MenuItem key={option} value={option}>
                 {searchFilmActionHelpers.capitalizeFirstLatter(option)}
